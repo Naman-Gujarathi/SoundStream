@@ -1,30 +1,30 @@
 apiVersion: apps/v1             #version of kubernetes API to be used for this resource
-kind: Deployment                # resource being defined is deployment
+kind: Deployment                # resource being defined in deployment
 metadata:                       # contains metadata about the deployment
-  name: auth                    # name of the deployment
-  labels:                       # Key Value pair to categorize the deployment
-    app: auth
-spec:                           # Specify the desired state of deployment
+  name: auth                    # name of the deployment, name should be uniquei
+  labels:                       # Key Value pair 
+    app: auth                   # pods are labelled with app:auth
+spec:                           # Specify the desired state of deployment or record of intent
   replicas: 2			# defines number of pod replicas to be created
   selector:			# how to identify the pod that Deployment manages
     matchLabels:
-      app: auth
+      app: auth                 # Key value pair with app:auth will be managed by deployed
   strategy:			# strategy used to update the deployment pod
-    type: RollingUpdate		# it means pods will be updated gradually
+    type: RollingUpdate		# it means pods will be updated gradually other one is (Recreate)
     rollingUpdate:
       maxSurge: 3		# maximum number of pod that can be created above desired state
   template:			# describe the pod that will be created by deployment
     metadata:
       labels:
         app: auth
-    spec:			# describe the container and enviroment variable
+    spec:			# it is pod spec, describe the container and enviroment variable
       containers:		# list of container that will run in the pod
         - name: auth		# name of the container
           image: namangujarathi/auth # Docker image to use for container
           ports:		# port to expose for container
            - containerPort: 5000
           envFrom:		# Specify the source of envioroment variable for container
-            - configMapRef:	# reference a configmap
+            - configMapRef:	# reference a configmap which contains unsensiritve coniguration info
                 name: auth-configmap	# name of config map to use
-            - secretRef: 
-                name: auth-secret 
+            - secretRef:        
+                name: auth-secret # contains sensitive inforamtion such as token , paassowrd  
