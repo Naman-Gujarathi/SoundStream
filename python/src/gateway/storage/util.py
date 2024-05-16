@@ -22,7 +22,7 @@ def upload(f, fs, channel, access):
       # routing key is name of queue
       routing_key="video",
       # it serialize the python object into string, it is oppostite of json loads
-      body=json.dumps(message)
+      body=json.dumps(message),
       properties=pika.BasicProperties(
          # it means queue is durable and to make msg durable we need to set this configuration 
         delivery_mode = pika.spec.PERSISTENT_DELIVERY_MODE
