@@ -1,0 +1,36 @@
+apiVersion: apps/v1
+kind: StatefulSet # StatefulSets here for persistent storage, and ordered, graceful deployment and scaling
+metadata:
+  name: rabbitmq
+spec:
+  serviceName: "not-applicable"
+  selector:
+    matchLabels:
+      app: rabbitmq
+  template:
+    metadata:
+      labels:
+        app: rabbitmq
+    spec:
+      containers:
+        - name: rabbitmq
+          image: rabbitmq:3-management # official rabbitmq image which also contains GUI
+          ports:
+            - name: http
+              protocol: TCP
+              containerPort: 15672 # port responsible for GUI for rabitmq
+            - name: amqp # advanced message queue protocol
+              protocol: TCP
+              containerPort: 5672 # port responsible for message queue
+          envFrom:
+            - configMapRef:
+                name: rabbitmq-configmap
+            - secretRef:
+                name: rabbitmq-secret
+          volumeMounts:
+            - mountPath: "/var/lib/rabbitmq" #rabbit mq will store message and queues in this path
+              name: rabbitmq-volume
+      volumes:
+        - name: rabbitmq-volume
+          persistentVolumeClaim:
+            claimName: rabbitmq-pvc
