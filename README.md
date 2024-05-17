@@ -1,7 +1,3 @@
-It looks like the Markdown formatting might not be rendering correctly in your README file. Here is a more refined version of the README content that should render properly:
-
-```markdown
-# A first-level heading
 # SoundStream: Microservices-Based Video to MP3 Converter
 
 Welcome to SoundStream, a microservices-based application designed to convert videos to MP3 format. This project leverages a variety of modern technologies to provide a scalable, efficient, and reliable service. It includes microservice architectures and distributed systems using Python, Kubernetes, RabbitMQ, MongoDB, and MySQL.
@@ -68,18 +64,24 @@ Welcome to SoundStream, a microservices-based application designed to convert vi
 
 3. **Start Services**:
 
-    Use Docker Compose to start the services.
+    Start Minikube Tunnel:
 
     ```sh
-    docker-compose up
+    minikube tunnel
     ```
 
-4. **Deploy to Kubernetes**:
-
-    Apply the Kubernetes configurations located in the `k8s/` directory.
+    Apply Kubernetes Configurations:
 
     ```sh
-    kubectl apply -f k8s/
+    kubectl apply -f .
+    ```
+
+    Use Postman to send a request to the API Gateway to upload a video.
+
+    Apply the Kubernetes configurations located in the `k9s/` directory.
+
+    ```sh
+    kubectl apply -f k9s/
     ```
 
 ## Usage
@@ -138,13 +140,6 @@ We welcome contributions from the community! Please follow these steps to contri
 
     Go to the original repository and create a pull request.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Contact
 
-For any questions or feedback, feel free to reach out at [your-email@example.com](mailto:your-email@example.com).
-```
-
-Make sure to adjust the indentation and formatting as needed in your markdown editor to ensure that everything renders properly. This should improve the readability and appearance of your `README.md` file.
+For any questions or feedback, feel free to reach out at [gujarathi.n@northeasatern.edu].
