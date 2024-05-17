@@ -4,7 +4,7 @@ Welcome to SoundStream, a microservices-based application designed to convert vi
 
 ## Architecture Overview
 
-![System Architecture](path/to/your/architecture-image.png)
+![System Architecture](/Users/naman/Downloads/SoundStream_SystemDesign.png)
 
 ### Components
 
