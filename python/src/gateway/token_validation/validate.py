@@ -4,13 +4,13 @@ def token(request):
   if not "Authorization" in request.headers:
     return None, ("missing authorization header", 401)
   
-  token = request.header["Authorization"]
+  token = request.headers["Authorization"]
 
   if not token:
     return None, ("missng jwt token credentials", 401)
 
   response = requests.post(
-    f"http://{os.envrion.get('AUTH_SVC_ADDRESS')}/validate",
+    f"http://{os.environ.get('AUTH_SVC_ADDRESS')}/validate",
     headers={"Authorization": token},
   )
   

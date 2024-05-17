@@ -1,11 +1,9 @@
-# it is used to store configuration data that can be consumed by kubernetes application
-apiVersion: v1 # version of Kubernetes API being used 
-kind: ConfigMap #type of Kubernetes object being created
+apiVersion: v1
+kind: ConfigMap
 metadata:
-   name: auth-configmap
+  name: auth-configmap
 data:
-   MySQL_HOST: host.minikube.internal # service within minikube to communicate to localhost services
-   MYSQL_USER: auth_user
-   MYSQL_DB: auth
-   MYSQL_PORT: "3306"
-
+  MYSQL_HOST: host.minikube.internal
+  MYSQL_USER: auth_user
+  MYSQL_DB: auth
+  MYSQL_PORT: "3306"
