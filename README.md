@@ -4,7 +4,7 @@ Welcome to SoundStream, a microservices-based application designed to convert vi
 
 ## Architecture Overview
 
-![System Architecture](/Users/naman/Downloads/SoundStream_SystemDesign.png)
+https://lucid.app/lucidchart/90182de1-084a-40bd-81e7-c5fd477f75bb/edit?viewport_loc=-755%2C806%2C3024%2C1724%2C.Q4MUjXso07N&invitationId=inv_b2e1fcbf-b8f3-4872-9586-dc1472fd6106
 
 ### Components
 
