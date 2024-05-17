@@ -1,17 +1,17 @@
 It appears that the issue is with the way the Markdown is being rendered. Here is a corrected version that ensures the formatting will be properly interpreted by Markdown renderers like GitHub:
 
 ```markdown
-# SoundStream: Microservices-Based Video to MP3 Converter
+ SoundStream: Microservices-Based Video to MP3 Converter
 
 Welcome to SoundStream, a microservices-based application designed to convert videos to MP3 format. This project leverages a variety of modern technologies to provide a scalable, efficient, and reliable service. It includes microservice architectures and distributed systems using Python, Kubernetes, RabbitMQ, MongoDB, and MySQL.
 
-## Architecture Overview
+ Architecture Overview
 
 ![System Architecture](path/to/your/architecture-image.png)
 
 ### Components
 
-1. **Client**: The user-facing application that allows users to upload videos for conversion.
+1. Client: The user-facing application that allows users to upload videos for conversion.
 2. **API Gateway**: The central hub that routes requests to the appropriate services.
 3. **Auth Service**: Handles user authentication and interacts with the Auth DB.
 4. **Video to MP3 Service**: Converts uploaded videos to MP3 format and stores the results in the storage DB.
